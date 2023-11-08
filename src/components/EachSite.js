@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import Avatar from 'react-avatar';
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
-
-function EachSite({ site }) {
-  const { name, phone, city, AssignedElectritian, InstallationDate, grievance } = site ? site : "";
+function EachSite({ site, changeTheDate }) {
+  let { name, phone, city, AssignedElectritian, grievance } = site ? site : "";
+  const [InstallationDate, setInstallationDate] = useState(site.InstallationDate);
   /*{
     "name": "KRISHNA ROY",
     "grievance": false
@@ -13,22 +14,25 @@ function EachSite({ site }) {
     "AssignedElectritian": [],
     "InstallationDate": "2023-01-04T00:00:00.000Z",
 }*/
-  const installDate = (utcTimestamp) => {
-    const date = new Date(utcTimestamp);
-    const formattedDate = date.toLocaleString('en-US', {
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: true,
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    });
-    return formattedDate;
+  /*  const installDate = (utcTimestamp) => {
+     const date = new Date(utcTimestamp);
+     const formattedDate = date.toLocaleString('en-US', {
+       hour: 'numeric',
+       minute: 'numeric',
+       hour12: true,
+       day: '2-digit',
+       month: '2-digit',
+       year: 'numeric',
+     });
+     return formattedDate;
+   } */
+  const changeDate = (newDate) => {
+    changeTheDate(site, newDate)
+    setInstallationDate(newDate);
+    site.InstallationDate = newDate;
+    return InstallationDate;
   }
-  const setDate = (newDate) => {
-    console.log(newDate);
-    return "";
-  }
+
   const siteElectricians = AssignedElectritian.length > 0 ? AssignedElectritian.map((ea) => ea.electricianName) : "__";
   return (
     <tr>
@@ -37,8 +41,8 @@ function EachSite({ site }) {
       <td>{phone}</td>
       <td>{city}</td>
       <td>{siteElectricians}</td>
-      <td>{installDate(InstallationDate)}</td>
-      <td> <DatePicker selected={InstallationDate} onChange={(date) => setDate(date)} /></td>
+      {/* <td>{installDate(InstallationDate)}</td> */}
+      <td> <DatePicker selected={new Date(InstallationDate)} onChange={(date) => changeDate(date)} /></td>
     </tr >
   )
 }

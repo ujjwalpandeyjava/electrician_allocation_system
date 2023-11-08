@@ -1,13 +1,19 @@
-import React, { Fragment } from 'react';
-import listOfElectricians from '../static/electricianData.json';
+import React, { Fragment, useEffect, useState } from 'react';
+import listOfElectriciansJSON from '../static/electricianData.json';
 import rawSiteDataCopy from '../static/rawSiteData_copy.json';
 import EachElectrician from './EachElectrician';
 
 function Electrician() {
+	const [listOfElectricians, setListOfElectricians] = useState(listOfElectriciansJSON);
+	const [rawSiteData, setRawSiteData] = useState(rawSiteDataCopy);
+
+	useEffect(() => {
+		console.log(listOfElectricians);
+	}, [])
+
 	function autoAssignBegins() {
 		console.log("autoAssignBegins---");
-		console.log({ rawSiteDataCopy, listOfElectricians });
-
+		console.log({ rawSiteData, listOfElectricians });
 
 	}
 	return (

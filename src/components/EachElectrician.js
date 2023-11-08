@@ -10,11 +10,6 @@ function EachElectrician({ eachEl }) {
 			<td>{grievanceElectrician ? "Grievance" : "General"}</td>
 			<td>{phoneNumber}</td>
 			<td>{zone.length < 1 ? "N/A" : zone.join(", ")}</td>
-			{/* <td className="actions">
-				<Link to={`/eachEl`} className="mr-4">
-					<button><span className="fas fa-edit">Edit</span></button>
-				</Link>
-			</td> */}
 		</tr >
 	)
 }
