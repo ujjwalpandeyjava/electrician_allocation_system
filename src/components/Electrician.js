@@ -1,21 +1,10 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import listOfElectriciansJSON from '../static/electricianData.json';
-import rawSiteDataCopy from '../static/rawSiteData_copy.json';
 import EachElectrician from './EachElectrician';
 
 function Electrician() {
 	const [listOfElectricians, setListOfElectricians] = useState(listOfElectriciansJSON);
-	const [rawSiteData, setRawSiteData] = useState(rawSiteDataCopy);
 
-	useEffect(() => {
-		console.log(listOfElectricians);
-	}, [])
-
-	function autoAssignBegins() {
-		console.log("autoAssignBegins---");
-		console.log({ rawSiteData, listOfElectricians });
-
-	}
 	return (
 		<Fragment>
 			{/* {console.log(listOfElectricians)} */}
@@ -37,10 +26,8 @@ function Electrician() {
 							}) : null}
 						</tbody>
 					</table>
-					<button onClick={() => autoAssignBegins()} className='atoAssignElectricians'>Auto-Assign Electrician</button>
 				</>
 			}
-
 		</Fragment>
 	)
 }

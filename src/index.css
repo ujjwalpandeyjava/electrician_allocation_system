@@ -80,7 +80,6 @@ th:not(:first-child) {
   text-align: center;
 }
 button.atoAssignElectricians {
-  margin-top: 2rem;
   display: block;
   margin-inline: auto;
   position: relative;

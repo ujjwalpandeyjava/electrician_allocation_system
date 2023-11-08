@@ -1,0 +1,9 @@
+.assignSec {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	background: #e7f0ff;
+	padding: 0.8rem 1em;
+}
