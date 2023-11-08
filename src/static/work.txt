@@ -1,0 +1,16 @@
+>> electrician_allocation_system
+> Right electrician work on the right site
+>>>>  Input: 
+	1. list of electricians
+	2. List of sites on a given day
+	Output:
+	- Give a button to "Auto assign electrician on grievance type based" 
+	- Preference grievance electrician on grievance sites, then assign generals
+	- Each electrician can max have 3 sites a day
+	- No need to consider zone
+	-> If both site and electrician are free, assign any electrician to any site.
+	Electrician details: Show who is busy where
+>> Pages:
+	1. Site details: Change date of site work:  (Button to auto assign electrician on site)
+	2. Electrician details: Show who is busy where
+	3. 

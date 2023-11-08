@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
@@ -7,4 +13,110 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Navbar */
+.mainNavbar {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.navbar {
+  background: #f5f5ff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 1em;
+  color: black;
+  text-decoration: none;
+}
+.secondaryNav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  column-gap: 1em;
+  align-items: center;
+}
+.secondaryNav a {
+  color: black;
+  text-decoration: none;
+  transition: 400ms all ease;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.secondaryNav a:hover {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  outline: 1px solid black;
+  box-shadow: 0 0 5px gray;
+}
+/* Body */
+.BodyOfContactApp {
+  min-height: 80vh;
+  /* background-color: orange; */
+}
+
+/* Electrician */
+.tableElectrician {
+  margin-top: 1em;
+  width: 100%;
+  border: none;
+}
+tr {
+  transition: 300ms all ease;
+}
+tr:hover {
+  background-color: rgb(224, 224, 224);
+}
+th,
+td {
+  padding: 2px 6px;
+  text-align: left;
+}
+td:not(:first-child),
+th:not(:first-child) {
+  text-align: center;
+}
+button.atoAssignElectricians {
+  margin-top: 2rem;
+  display: block;
+  margin-inline: auto;
+  position: relative;
+  background-color: rgb(230, 34, 77);
+  border-radius: 5px;
+  box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+  padding: 15px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 49px;
+  color: #fff;
+  border: none;
+  font-size: 1.15rem;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+button.atoAssignElectricians::before {
+  content: "";
+  background-color: rgb(248, 50, 93);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: width 700ms ease-in-out;
+  display: inline-block;
+}
+button.atoAssignElectricians:hover::before {
+  width: 100%;
+}
+/* Utility */
+.mr-2 {
+  margin-right: 4px;
 }
