@@ -2,8 +2,8 @@ import moment from "moment";
 import { Fragment, useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import listOfElectriciansJSON from '../static/electricianData.json';
-import rawSiteDataCopy from '../static/rawSiteData_copy.json';
+import listOfElectriciansJSON from '../../static/electricianData.json';
+import rawSiteDataCopy from '../../static/rawSiteData_copy.json';
 import EachSite from './EachSite';
 import SitesCSS from './Sites.module.css';
 
@@ -86,7 +86,7 @@ function Sites() {
 	return (
 		<Fragment>
 			<div className={SitesCSS.assignSec}>
-				<h3>Assign for date:</h3>
+				<h3 style={{ marginRight: "8px" }}>Assign for date: </h3>
 				<DatePicker selected={new Date(assignDateToWorkOn)} onChange={(date) => setAssignDateToWorkOn(date)} />
 				<button onClick={() => autoAssignBegins()} className='atoAssignElectricians'>Auto-Assign Electrician</button>
 			</div>

@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import listOfElectriciansJSON from '../static/electricianData.json';
+import listOfElectriciansJSON from '../../static/electricianData.json';
 import EachElectrician from './EachElectrician';
 
 function Electrician() {
@@ -17,7 +17,6 @@ function Electrician() {
 								<th scope="col">Electrician Type</th>
 								<th scope="col">Phone No</th>
 								<th scope="col">Zones</th>
-								{/* <th scope="col">Actions</th> */}
 							</tr>
 						</thead>
 						<tbody>

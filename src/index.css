@@ -17,6 +17,10 @@ code {
 
 /* Navbar */
 .mainNavbar {
+  /* position: fixed; */
+  display: block;
+  width: 100%;
+  top: 0;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 .navbar {
