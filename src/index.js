@@ -6,11 +6,12 @@ import Navbar from './components/Navbar';
 import Electrician from './components/electrician/Electrician';
 import Sites from './components/site/Sites';
 import './index.css';
+import configs from '../package.json'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Fragment>
-    <BrowserRouter>
+    <BrowserRouter basename={configs.name}>
       <Navbar />
       <div className='BodyOfContactApp'>
         <Routes>
